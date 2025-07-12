@@ -1,4 +1,4 @@
-# 🧠 Customer Segmentation using KMeans (RFM Analysis)
+# Customer Segmentation using KMeans (RFM Analysis)
 
 This project applies **unsupervised learning** (KMeans clustering) to segment customers based on their **Recency**, **Frequency**, and **Monetary (Totalexpenses)** behavior.
 
