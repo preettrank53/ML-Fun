@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compressor using KMeans</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container py-5">
+    <h1 class="mb-4 text-center">Image Compressor using KMeans</h1>
+    <form id="upload-form" method="POST" enctype="multipart/form-data">
+        <div id="drop-zone" class="drop-zone mb-3">
+            <span id="drop-zone-text">Drag & Drop your image here or click to select</span>
+            <input type="file" name="image" id="image-input" accept="image/*" style="display:none;">
+        </div>
+        <div class="text-center mb-3">
+            <button type="submit" class="btn btn-primary" id="compress-btn" disabled>Compress</button>
+        </div>
+        <div id="loading" class="text-center mb-3" style="display:none;">
+            <div class="loader"></div>
+            <div class="mt-2">Compressing image, please wait...</div>
+        </div>
+    </form>
+    {% if original_img and compressed_img %}
+    <div class="row mt-4">
+        <div class="col-md-6 text-center">
+            <h5>Original Image</h5>
+            <img src="/uploads/{{ original_img }}" class="img-preview mb-2" id="original-img">
+            <br>
+            <a href="/uploads/{{ original_img }}" download class="btn btn-outline-secondary btn-sm">Download Original</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <h5>Compressed Image (K={{ best_k }})</h5>
+            <img src="/static/{{ compressed_img }}?v={{ range(10000)|random }}" class="img-preview mb-2" id="compressed-img">
+            <br>
+            <a href="/static/{{ compressed_img }}" download class="btn btn-outline-success btn-sm">Download Compressed</a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const dropZone = document.getElementById('drop-zone');
+    const imageInput = document.getElementById('image-input');
+    const compressBtn = document.getElementById('compress-btn');
+    let fileSelected = false;
+
+    dropZone.addEventListener('click', () => imageInput.click());
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+    });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        if (e.dataTransfer.files.length) {
+            imageInput.files = e.dataTransfer.files;
+            updateDropZoneText(e.dataTransfer.files[0].name);
+            fileSelected = true;
+            compressBtn.disabled = false;
+        }
+    });
+    imageInput.addEventListener('change', (e) => {
+        if (e.target.files.length) {
+            updateDropZoneText(e.target.files[0].name);
+            fileSelected = true;
+            compressBtn.disabled = false;
+        }
+    });
+    function updateDropZoneText(filename) {
+        document.getElementById('drop-zone-text').textContent = filename;
+    }
+    document.getElementById('upload-form').addEventListener('submit', function(e) {
+        if (!fileSelected) {
+            e.preventDefault();
+            return;
+        }
+        document.getElementById('loading').style.display = 'block';
+        compressBtn.disabled = true;
+    });
+</script>
+</body>
+</html>
