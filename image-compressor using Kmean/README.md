@@ -83,8 +83,8 @@ image-kmeans-app/
 ---
 
 ## 🖼️ Screenshot
+<img width="1872" height="850" alt="Screenshot 2025-07-12 154739" src="https://github.com/user-attachments/assets/e4cedacc-d635-4082-be77-425a8aaf3cb2" />
 
-![Screenshot](Screenshot%202025-07-12%20154739.png)
 
 ---
 
