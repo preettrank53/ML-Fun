@@ -1,33 +1,26 @@
+# Image Compressor using K-Means
 
-# 📷 Image Compressor using KMeans
-
-This is a simple web app that allows you to compress images using **KMeans clustering**. It automatically reshapes the image, determines the best number of clusters (`k`) using the Elbow method, and outputs a compressed image.
+This project is a simple web application that compresses images using K-Means clustering. It reshapes the image data, selects an appropriate number of clusters (`k`) using the Elbow Method, and produces a compressed output image.
 
 Built with:
 - Python + Flask
-- Scikit-learn (KMeans + Pipeline)
+- scikit-learn (KMeans + Pipeline)
 - Pillow (image processing)
-- HTML/CSS (Frontend UI)
+- HTML/CSS (frontend UI)
 
----
+## Features
 
-## 🚀 Features
-
-- Upload any `.jpg`/`.png` image
-- Automatically reshapes the image for clustering
-- Chooses the best `k` (number of colors) using the Elbow method
-- Displays and allows download of the compressed image
+- Upload `.jpg` / `.png` images
+- Automatically reshapes images for clustering
+- Selects `k` (number of colors) using the Elbow Method
+- Displays the compressed image and allows downloading
 - Clean, responsive UI
 
----
-
-## 🖥️ How to Run Locally
+## How to run locally
 
 You can run this project using either `conda` or `venv`.
 
----
-
-### 🐍 Using Conda
+### Using conda
 
 ```bash
 # Step 1: Create and activate environment
@@ -41,13 +34,12 @@ conda install flask numpy pillow scikit-learn joblib matplotlib
 python app.py
 ```
 
----
-
-### 💡 Using pip / venv (no conda)
+### Using pip / venv (no conda)
 
 ```bash
 # Step 1: Create virtual environment
 python -m venv venv
+
 # Activate it
 # On Windows:
 venv\Scripts\activate
@@ -61,9 +53,7 @@ pip install flask numpy pillow scikit-learn joblib matplotlib
 python app.py
 ```
 
----
-
-## 📂 Project Structure
+## Project structure
 
 ```
 image-kmeans-app/
@@ -80,31 +70,21 @@ image-kmeans-app/
 └── README.md
 ```
 
----
+## Screenshot
 
-## 🖼️ Screenshot
-<img width="1872" height="850" alt="Screenshot 2025-07-12 154739" src="https://github.com/user-attachments/assets/e4cedacc-d635-4082-be77-425a8aaf3cb2" />
+<img width="1872" height="850" alt="Screenshot" src="https://github.com/user-attachments/assets/e4cedacc-d635-4082-be77-425a8aaf3cb2" />
 
+## What you learn
 
----
+- Using `make_pipeline` and `KMeans` in an end-to-end application
+- Saving and loading pipelines with `joblib`
+- Reshaping images and reducing colors with unsupervised learning
+- Integrating an ML pipeline into a Flask web application
 
-## ✅ What You Learn
+## License
 
-- How to use `make_pipeline` and `KMeans` in a real-world app
-- How to pickle and reuse pipelines using `joblib`
-- How to reshape images and reduce colors using unsupervised learning
-- How to integrate ML with a Flask web app
+This project is open source under the MIT License.
 
----
+## Contributing
 
-## 📜 License
-
-This project is open-source and free to use under the MIT License.
-
----
-
-## 🙌 Contribute
-
-PRs and feedback welcome! Just fork the repo, make changes, and submit a pull request.
-
----
+Contributions are welcome. Fork the repository, make your changes, and open a pull request.
