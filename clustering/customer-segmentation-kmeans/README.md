@@ -1,6 +1,6 @@
 # Customer Segmentation with K-Means (RFM Analysis)
 
-This project uses **unsupervised learning** (K-Means clustering) to segment customers based on **Recency**, **Frequency**, and **Monetary value (TotalExpenses)**.
+This project uses unsupervised learning (K-Means clustering) to segment customers based on **Recency**, **Frequency**, and **Monetary value (TotalExpenses)**.
 
 ## Project overview
 
@@ -9,19 +9,19 @@ This project uses **unsupervised learning** (K-Means clustering) to segment cust
 1. Clean and preprocess customer transaction data
 2. Remove outliers to improve clustering quality
 3. Scale features using `StandardScaler`
-4. Determine an appropriate number of clusters using the **Elbow Method** and **Silhouette Score**
-5. Train **K-Means** (k-means++) with a tuned `max_iter`
+4. Determine an appropriate number of clusters using the Elbow Method and Silhouette Score
+5. Train K-Means (k-means++) with a tuned `max_iter`
 6. Assign cluster labels based on customer behavior
 7. Visualize clusters (including 3D views) and analyze segment distributions
 
 ### Cluster interpretation
 
-| Cluster | TotalExpenses | Frequency | Recency | Segment label        |
-|--------:|---------------|-----------|---------|----------------------|
-| 0       | Low           | Low       | Medium  | Occasional Shopper   |
-| 1       | High          | High      | Low     | Loyal High-Value     |
-| 2       | Medium        | Medium    | Medium  | Mid-Tier Customer    |
-| 3       | Low           | Low       | High    | Lost or Dormant      |
+| Cluster | TotalExpenses | Frequency | Recency | Segment label      |
+|--------:|---------------|-----------|---------|--------------------|
+| 0       | Low           | Low       | Medium  | Occasional Shopper |
+| 1       | High          | High      | Low     | Loyal High-Value   |
+| 2       | Medium        | Medium    | Medium  | Mid-Tier Customer  |
+| 3       | Low           | Low       | High    | Lost or Dormant    |
 
 ## Repository contents
 
@@ -44,6 +44,6 @@ The resulting customer segments can support:
 
 ## Contact
 
-Created by PreetRank  
-LinkedIn: https://linkedin.com/in/preetrank  
+Created by Preet Rank  
+LinkedIn: https://www.linkedin.com/in/preet-rank-8999a5284/  
 Email: preetrank53@gmail.com
