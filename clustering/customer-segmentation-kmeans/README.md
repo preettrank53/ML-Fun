@@ -45,5 +45,5 @@ The resulting customer segments can support:
 ## Contact
 
 Created by PreetRank  
-LinkedIn: https://www.linkedin.com/in/preet-rank-8999a5284/  
+LinkedIn: https://linkedin.com/in/preetrank  
 Email: preetrank53@gmail.com
